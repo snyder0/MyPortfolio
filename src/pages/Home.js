@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Typewriter from "typewriter-effect";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,9 +23,7 @@ function Home() {
           container
           className={classes.root}
           justify="center"
-          alignItems="center"
-          spacing={1}
-        >
+          alignItems="center">
           <Typography align="left" variant="h3">
             <span className={classes.skill}>Hello,</span>
             <br />
@@ -33,9 +32,15 @@ function Home() {
             <Typography variant="h1">
               Luke Snyder,
             </Typography>
-            and I enjoy{" "}
+            and I enjoy
             <span className={classes.skill}>
-              web development.
+              <Typewriter
+                options={{
+                  strings: ["web development.", "UX/UI Design"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
             </span>
           </Typography>
         </Grid>
