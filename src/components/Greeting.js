@@ -5,9 +5,15 @@ import Grid from "@material-ui/core/Grid"
 import Typewriter from "typewriter-effect";
 
 const useStyles = makeStyles((theme) => ({
+  greeting: {
+    marginLeft: "2rem"
+  },
   skill: {
     color: "#7FCD91",
   },
+  typewriter: {
+    width: "25rem"
+  }
 }));
 
 export default function Greeting() {
@@ -15,7 +21,7 @@ export default function Greeting() {
 
   return (
     <>
-      <Typography align="left" variant="h4">
+      <Typography className={classes.greeting} align="left" variant="h4">
         <Grid item xs={12}>
           <span className={classes.skill}>Hello,</span>
         </Grid>
@@ -28,14 +34,14 @@ export default function Greeting() {
             </Typography>
         </Grid>
         <Grid container>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <span>and I enjoy</span>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item className={classes.typewriter} xs={12} sm={8}>
             <span className={classes.skill}>
               <Typewriter
                 options={{
-                  strings: ["web development.", "UX/UI Design.", "React development."],
+                  strings: ["web development.", "UX/UI Design.", "React development.", "responsive web design."],
                   autoStart: true,
                   loop: true,
                 }}
